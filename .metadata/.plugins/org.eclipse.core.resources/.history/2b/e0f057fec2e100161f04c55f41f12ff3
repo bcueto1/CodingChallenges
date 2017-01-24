@@ -1,0 +1,48 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class PermuttedSubstrings {
+	
+	/** HashMap that contains the alphabet associated with a different prime */
+	private HashMap<Character, Integer> charPrimeMap =
+			new HashMap<Character, Integer>();
+	
+	/** Constructor and initializes the charPrimeMap. */
+	public PermuttedSubstrings() {
+		char[] alphabetArray = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+		int[] primesArray = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41,
+				43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101};
+		for (int i = 0; i < 26; i++) {
+		    charPrimeMap.put(alphabetArray[i], primesArray[i]);
+		}
+	}
+	
+	private int getMultiple(String myString) {
+		char[] temp = myString.toLowerCase().toCharArray();
+		int multiple = 1;
+		for (char letter: temp) {
+			multiple *= this.charPrimeMap.get(letter);
+		}
+		return multiple;
+	}
+
+	/**
+	 * Main method to determine if a permuted string is located within
+	 * the parent string.
+	 *
+	 * @param A The little string.
+	 * @param B The parent string.
+	 * @return True if the permutation is present, false if otherwise.
+	 */
+	public boolean isPermutedSubstringInParentString(String A, String B) {
+		int smallString = this.getMultiple(A);
+		int bigString = 0;
+		for (int i = 0; i < B.length() - A.length(); i++) {
+			bigString = this.getMultiple(B.substring(i, i + A.length()));
+			if (bigString == smallString) {
+				return true;
+			}
+		}
+		return false;
+	}
+}

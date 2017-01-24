@@ -1,0 +1,62 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class PermuttedSubstrings {
+	
+	/** HashMap that contains an array of characters from the little string. */
+	private HashMap<Character, Integer> littleStringMap = new HashMap<Character, Integer>();
+	/** HashMap that contains an array of characters from a substring of the big string. */
+	private HashMap<Character, Integer> bigStringMap = new HashMap<Character, Integer>();
+	
+	/**
+	 * Method that adds characters to the hashmap and increases the value of each
+	 * entry based on how many times a specific character is repeated.
+	 *
+	 * @param myString The String that we get the characters from.
+	 * @param myMap The HashMap to insert character-integer entries.
+	 */
+	private void addToMap(String myString, HashMap<Character, Integer> myMap) {
+	    char[] temp = myString.toCharArray();
+	    for (char c : temp) {
+	        if (myMap.containsKey(c)) {
+	            myMap.put(c, 1);
+	        } else {
+	        	myMap.put(c, myMap.get(c) + 1);
+	        }
+	    }
+	}
+
+	/**
+	 * Main method to determine if a permuted string is located within
+	 * the parent string.
+	 *
+	 * @param A The little string.
+	 * @param B The parent string.
+	 * @return True if the permutation is present, false if otherwise.
+	 */
+	public boolean isPermutedSubstringInParentString(String A, String B) {
+		this.addToMap(A, this.littleStringMap);
+		String temp = "";
+		
+		for (int i = 0; i < B.length() - A.length(); i++) {
+		    temp = B.substring(i, i + A.length());
+		    int counter = 0;
+		    this.addToMap(temp, bigStringMap);
+
+		    for (Map.Entry<Character, Integer> letter:
+		    		bigStringMap.entrySet()) {
+		    	if (this.littleStringMap.containsKey(letter.getKey())) {
+		    	    if (this.littleStringMap.get(letter.getKey()) ==
+		    	    		letter.getValue()) {
+		    	    	counter++;
+		    	    }
+		    	}
+		    }
+		    if (counter == A.length()) {
+		        return true;
+		    }
+		    this.bigStringMap.clear();
+		}
+		return false;
+	}
+}

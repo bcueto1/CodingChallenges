@@ -1,0 +1,26 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class PermuttedSubstrings {
+	
+	/** HashMap that contains an array of characters from the little string. */
+	private HashMap<Character, Integer> charPrimeMap = new HashMap<Character, Integer>();
+	
+	public PermuttedSubstrings() {
+		char[] alphabetArray = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+		int[] primesArray = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
+				59, 61, 67, 71, 73, 79, 83, 89, 97, 101};
+	}
+
+	/**
+	 * Main method to determine if a permuted string is located within
+	 * the parent string.
+	 *
+	 * @param A The little string.
+	 * @param B The parent string.
+	 * @return True if the permutation is present, false if otherwise.
+	 */
+	public boolean isPermutedSubstringInParentString(String A, String B) {
+		return true;
+	}
+}

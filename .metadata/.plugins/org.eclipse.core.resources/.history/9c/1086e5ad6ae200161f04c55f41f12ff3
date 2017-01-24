@@ -1,0 +1,22 @@
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class TripleLiftTest {
+
+	/** Initialize test/ */
+	private static TripleLift test;
+	
+	/** Set up the test. */
+	@Before
+	public void setupTest() {
+		test = new TripleLift();
+	}
+	
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

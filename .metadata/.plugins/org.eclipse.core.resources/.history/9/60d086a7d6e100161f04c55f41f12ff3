@@ -1,0 +1,21 @@
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class PermuttedSubstringsTest {
+	
+	private static PermuttedSubstrings test;
+	
+	@Before
+	public void setupTest() {
+		test = new PermuttedSubstrings();
+	}
+
+	@Test
+	public void testBasicTests() {
+		assertTrue(true, test.isPermutedSubstringInParentString("abc", "jaksjcbaksjd"));
+		
+	}
+
+}

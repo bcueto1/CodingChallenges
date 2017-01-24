@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TripleLiftianNumbersTest" project="TL_Coding_Challenge" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="TripleLiftianNumbersTest" time="0.001">
+    <testcase name="testOne" classname="TripleLiftianNumbersTest" time="0.0"/>
+    <testcase name="testTwo" classname="TripleLiftianNumbersTest" time="0.0"/>
+    <testcase name="testThree" classname="TripleLiftianNumbersTest" time="0.0"/>
+    <testcase name="testFour" classname="TripleLiftianNumbersTest" time="0.0"/>
+    <testcase name="testZero" classname="TripleLiftianNumbersTest" time="0.0"/>
+    <testcase name="testTwentyFive" classname="TripleLiftianNumbersTest" time="0.0"/>
+  </testsuite>
+</testrun>
