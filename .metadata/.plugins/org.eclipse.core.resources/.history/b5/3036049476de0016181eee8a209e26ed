@@ -1,8 +1,0 @@
-
-public class PermuttedSubstrings {
-
-	public boolean isPermutedSubstringInParentString(String A, String B) {
-		
-		return true;
-	}
-}

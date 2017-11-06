@@ -5,7 +5,7 @@ This contains all the necessary problems and test cases for the TripleLift Codin
 is in TripleLift.java, Problem 2 is in TripleLiftianNumbers.java, and Problem 3 is in PermuttedSubstrings.java.
 There are test cases for Problem 1, 2 and 3 that show that everything is working perfectly.  There was no
 specification about whether the programs/methods should have a main, but I assumed there should be for 
-Problem 1, so there is a main there. Everything should be working fine.
+Problem 1, so there is a main there. Everything should be working fine.  Testing was done using JUnit.
 
 /-------- Note on Problem 3. ----------/
 There was no specification as to what characters the string was supposed to handle, so I just assumed
